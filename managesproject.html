@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Projects</title>
+    <link rel="stylesheet" href="managesproject.css">
+    </head>
+<body>
+    <div class="container">
+        <h1>Manage Projects</h1>
+
+        <div class="filters">
+            <input 
+                type="text" 
+                class="search-input" 
+                id="studentSearch" 
+                placeholder="Student name"
+            >
+            <select class="filter-select" id="skillsFilter">
+                <option value="">Skills</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="React">React</option>
+                <option value="Node.js">Node.js</option>
+                <option value="Python">Python</option>
+            </select>
+            <select class="filter-select" id="statusFilter">
+                <option value="">Status</option>
+                <option value="Approved">Approved</option>
+                <option value="Pending">Pending</option>
+                <option value="Needs Change">Needs Change</option>
+            </select>
+            <button class="search-btn" onclick="filterProjects()">Search</button>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Project Title</th>
+                            <th>Student</th>
+                            <th>Date</th>
+                            <th>Skills</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="projectsTable">
+                        <!-- Projects will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="details-panel" id="detailsPanel">
+                <div class="no-selection">
+                    Select a project to view details
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="JavaScripts/managesproject.js"></script>
+</body>
+</html>

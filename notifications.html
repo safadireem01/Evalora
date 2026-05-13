@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications Settings</title>
+    <link rel="stylesheet" href="notifications.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <nav class="nav-menu">
+            <!-- Updated General button to link to index.html -->
+            <a href="settings.html" class="nav-item " data-section="general">
+                    <img src="photos/settingg.svg" alt="settings" width="25px">
+                    General
+            </a>
+                <!-- Updated Roles button to link to roles.html -->
+                <a href="roles.html" class="nav-item " data-section="roles">
+                    <img src="photos/roles.png" alt="" width="25px">
+                    Roles
+                </a>
+                <a href="notifications.html" class="nav-item active" data-section="notifications">
+                    <img src="photos/notificationnn.png" alt="" width="25px">
+                    
+                    Notifications
+                </a>
+                <a href="logs.html" class="nav-item" data-section="logs">
+                   <img src="photos/logs.svg" alt="" width="25px">
+                    Logs
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="account.html" class="nav-item" data-section="account">
+                    <img src="photos/account.png" alt="" width="25px">
+                    Account
+                </a>
+                <button class="nav-item logout" id="logoutBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    Logout
+                </button>
+    </aside>
+
+    <div class="main-content">
+        <div class="content-card">
+            <h1>Notifications</h1>
+
+            <div class="notification-channels">
+                <h2>Notifications Channels</h2>
+                <div class="channel-item">
+                    <div class="channel-info">
+                        <h3>Email</h3>
+                        <p>Receive email alerts</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="channel-item">
+                    <div class="channel-info">
+                        <h3>On-site</h3>
+                        <p>Receive in app messages</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="triggers-section">
+                <h2>Triggers</h2>
+                <table class="triggers-table">
+                    <thead>
+                        <tr>
+                            <th>Trigger</th>
+                            <th>Email</th>
+                            <th>On-site</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>New Project Submitted</td>
+                            <td><input type="checkbox" class="custom-checkbox"></td>
+                            <td><input type="checkbox" class="custom-checkbox" checked></td>
+                        </tr>
+                        <tr>
+                            <td>Opportunity Near Deadline</td>
+                            <td><input type="checkbox" class="custom-checkbox" checked></td>
+                            <td><input type="checkbox" class="custom-checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>New Student Register</td>
+                            <td><input type="checkbox" class="custom-checkbox" checked></td>
+                            <td><input type="checkbox" class="custom-checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>Project Resubmitted</td>
+                            <td><input type="checkbox" class="custom-checkbox"></td>
+                            <td><input type="checkbox" class="custom-checkbox" checked></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <button class="send-button" onclick="sendTestNotifications()">Send Test Notifications</button>
+        </div>
+    </div>
+
+    <!-- Logout Confirmation Modal -->
+    <div class="modal-overlay" id="logoutModal">
+        <div class="modal">
+            <h3 class="modal-title">Confirm Logout</h3>
+            <p class="modal-message">Are you sure you want to logout?</p>
+            <div class="modal-buttons">
+                <button class="btn-cancel" id="cancelBtn">Cancel</button>
+                <button class="btn-confirm" id="confirmBtn">Yes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="JavaScripts/notifications.js"></script>
+    </body>
+    </html>
+

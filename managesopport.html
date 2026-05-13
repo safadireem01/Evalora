@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Opportunities</title>
+    <link rel="stylesheet" href="managesopport.css">
+    </head>
+<body>
+    <div class="container">
+        <h1>Manage Opportunities</h1>
+
+        <div class="filters">
+            <select id="filterType">
+                <option value="">Type</option>
+                <option value="Internship">Internship</option>
+                <option value="Full-time">Full-time</option>
+                <option value="Part-time">Part-time</option>
+                <option value="Contract">Contract</option>
+            </select>
+
+            <select id="filterProvider">
+                <option value="">Provider</option>
+                <option value="TechCorp">TechCorp</option>
+                <option value="InnovateLabs">InnovateLabs</option>
+                <option value="StartupHub">StartupHub</option>
+                <option value="GlobalTech">GlobalTech</option>
+            </select>
+
+            <select id="filterLocation">
+                <option value="">Location</option>
+                <option value="Amman">Amman</option>
+                <option value="Irbid">Irbid</option>
+                <option value="Balqaa">Balqaa</option>
+                <option value="Al-zarqa">Al-zarqa</option>
+            </select>
+
+            <select id="filterStatus">
+                <option value="">Status</option>
+                <option value="ON-SITE">ON-SITE</option>
+                <option value="REMOTE">REMOTE</option>
+                <option value="HYBRID">HYBRID</option>
+            </select>
+
+            <button class="search-btn" onclick="applyFilters()">Search</button>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Provider</th>
+                        <th>Type</th>
+                        <th>Location</th>
+                        <th>Deadline</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="opportunitiesTable">
+                    <!-- Opportunities will be inserted here dynamically -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="add-opportunity-container">
+            <button class="add-btn" onclick="openModal()">
+                Add Opportunity
+                <span style="font-size: 20px;">+</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="opportunityModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add Opportunity</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <form id="opportunityForm">
+                <input type="hidden" id="opportunityId">
+                
+                <div class="form-group">
+                    <label for="title">Title *</label>
+                    <input type="text" id="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="provider">Provider *</label>
+                    <select id="provider" required>
+                        <option value="">Select Provider</option>
+                        <option value="TechCorp">TechCorp</option>
+                        <option value="InnovateLabs">InnovateLabs</option>
+                        <option value="StartupHub">StartupHub</option>
+                        <option value="GlobalTech">GlobalTech</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="type">Type *</label>
+                    <select id="type" required>
+                        <option value="">Select Type</option>
+                        <option value="Internship">Internship</option>
+                        <option value="Full-time">Full-time</option>
+                        <option value="Part-time">Part-time</option>
+                        <option value="Contract">Contract</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location *</label>
+                    <select id="location" required>
+                        <option value="">Select Location</option>
+                        <option value="Amman">Amman</option>
+                        <option value="Irbid">Irbid</option>
+                        <option value="Balqaa">Balqaa</option>
+                        <option value="Al-zarqa">Al-zarqa</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="deadline">Deadline *</label>
+                    <input type="date" id="deadline" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="status">Status *</label>
+                    <select id="status" required>
+                        <option value="">Select Status</option>
+                        <option value="ON-SITE">ON-SITE</option>
+                        <option value="REMOTE">REMOTE</option>
+                        <option value="HYBRID">HYBRID</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn-submit">Save Opportunity</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="JavaScripts/managesopport.js"></script>
+</body>
+</html>
